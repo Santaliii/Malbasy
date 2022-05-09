@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Gabriela', serif;
+}
+
+.header-rule {
+    width: 1px;
+    height: 20px;
+    display: inline-block;
+    color: white;
+}
+
+.malbasy {
+    color: white;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    color: white;
+    z-index: 999;
+    width: 100%;
+    height: 5vh;
+    background-color: rgba(2, 109, 128, 1);
+}
+
+.logo-desc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    width: 110px;
+}
+
+.logo-desc img {
+    mix-blend-mode: multiply;
+    height: 36px;
+    width: 36px;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.link-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 50vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.link-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.admin-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 50%;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 5px;
+    transition: all 0.4s ease;
+}
+
+.link:hover {
+    box-shadow: 0 0 10px rgb(187, 187, 187);
+}
+
+.cart-information {
+    display: flex;
+    justify-content: flex-end;
+    width: 110px;
+}
+
+.cart-information a:hover+.cart-preview {
+    display: flex;
+}
+
+.cart-preview {
+    z-index: 100;
+    position: absolute;
+    align-items: center;
+    justify-content: space-between;
+    top: 100%;
+    display: none;
+    height: 50px;
+    width: 220px;
+    background-color: white;
+    margin-top: 5px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px black;
+    padding: 15px;
+    color: black;
+    margin-left: -80px;
+}
+
+.info-container {
+    display: inline-block;
+    position: relative;
+}
+
+.info-container img {
+    width: 36px;
+    height: 36px;
+}
+
+.info-container .item-count {
+    font-family: 'Roboto Mono', monospace;
+    text-decoration: none;
+    color: white;
+    font-size: 0.85em;
+    position: absolute;
+    top: 14px;
+    left: 7px;
+}
+
+.admin-link {
+    text-align: center;
+    border: none;
+    height: 30px;
+    line-height: 30px;
+    width: 35%;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.login-button {
+    width: 100%;
+}
+
+.logout-button {
+    width: 10%;
+}
+
+.admin-link,
+.login-button,
+.logout-button {
+    color: rgb(162, 244, 255);
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.admin-link:hover,
+.login-button:hover,
+.logout-button:hover {
+    box-shadow: 0 0 10px white;
+}
+
+.login-info {
+    text-align: center;
+    display: inline-flex;
+    justify-content: flex-end;
+    position: absolute;
+    width: 20%;
+    top: 5px;
+    right: 5px;
+}
+
+.admin-name {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+
+.admin-name span {
+    font-weight: bold;
+    text-decoration: underline;
+}

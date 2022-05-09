@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background-color: rgb(255, 255, 255);
+}
+
+body {
+    font-family: 'Gabriela', serif;
+}
+
+hr {
+    display: block;
+    margin-top: 10px;
+}
+
+.products-top {
+    max-width: 50vw;
+    height: 30%;
+    margin: auto;
+}
+
+.homepage-logo {
+    mix-blend-mode: multiply;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.category {
+    font-family: 'Gabriela', serif;
+    font-size: 1.3em;
+    text-decoration: none;
+    background: none;
+    border: solid 1px transparent;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.category:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+.category:active {
+    font-size: 1.2em
+}
+
+.products-center {
+    margin: auto;
+    margin-top: 40px;
+    max-width: 50%;
+}
+
+.products-container {
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    grid-auto-rows: 390px;
+    justify-content: center;
+    gap: 50px;
+    margin: 40px;
+    width: 90%;
+}
+
+.product-link {
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    color: black;
+}
+
+.product-link:hover {
+    box-shadow: 0 0 30px black;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+}
+
+.product img {
+    mix-blend-mode: multiply;
+    width: 250px;
+    height: 300px;
+}
+
+.description {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    margin-top: 15px;
+    padding: 0 0 18px 18px;
+}
