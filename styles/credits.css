@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+.credit-title {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-family: "Poppins", "Serif";
+}
+
+.homepage-logo {
+    mix-blend-mode: multiply;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+}
+
+hr {
+    display: block;
+    margin-top: 5px;
+    max-width: 70vw;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.attribute-container {
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-between;
+    width: 500px;
+    flex-direction: column;
+}
+
+.credit {
+    margin: 10px;
+    font-family: "Poppins", "Serif";
+    color: black;
+}

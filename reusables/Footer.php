@@ -8,6 +8,7 @@
   <div class="copyright">
     <hr>
     <p>&copy; Malbasy, 2022-2022 - All Rights Reserved</p>
+    <p><a class="credits-label" href="Credits.php">Credits</a></p>
   </div>
 
 </footer>

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.homepage-logo {
+    mix-blend-mode: multiply;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+hr {
+    display: block;
+    margin-top: 5px;
+    max-width: 70vw;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+#map {
+    height: 40%;
+    width: 45%;
+    box-shadow: 0 0 30px;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-top: 50px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contact-item {
+    font-family: 'Poppins', serif;
+    width: 280px;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.contact-text {
+    margin-top: 10px;
+}
+
+h1 {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+
+.contact-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}

@@ -39,13 +39,12 @@ footer {
 .contact-us {
     display: block;
     padding: 10px;
-    position: relative;
-    top: 17%;
     text-align: center;
     color: white;
     text-decoration: none;
     font-size: 1.8em;
     transition: all 0.2s ease;
+    margin-top: 40px;
 }
 
 .contact-us:hover {
@@ -65,4 +64,10 @@ footer {
     color: white;
     margin-bottom: 5px;
     width: 100%;
+}
+
+.credits-label {
+    text-decoration: none;
+    color: white;
+    font-family: 'Poppins', serif;
 }
