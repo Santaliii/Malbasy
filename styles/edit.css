@@ -96,7 +96,7 @@
     height: 120px;
 }
 
-.stock-dialogue {
+.out-of-stock {
     color: red;
     font-weight: bold;
 }

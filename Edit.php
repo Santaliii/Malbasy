@@ -58,10 +58,10 @@ disconnectFromDatabase($database);
 
   <?php 
   if(isset($_GET['edit'])){
-    if($_GET['edit'] == "success") {    ?>
+    if($_GET['edit'] == "Edit" || $_GET['edit'] == "delete") {    ?>
 
   <div class="warning-label">
-    <p>Item successfully edited</p>
+    <p><?php print($_GET['edit']." successful") ?></p>
   </div>
 
   <?php } } ?>
@@ -90,8 +90,8 @@ disconnectFromDatabase($database);
               <p><b><?php print($row["description"]); ?></b></p>
               <p class="type"><?php print($row["type"]); ?></p>
               <p><?php print("SAR ".$row["price"]); ?></p>
-              <p class="<?php $outOfStock ? print('stock-dialogue') : '' ?>">
-                <?php $row["quantity"] > 0 ? print("In Stock: ".$row["quantity"]) : print("Out of Stock") ?>
+              <p class="<?php $outOfStock ? print('out-of-stock') : '' ?>">
+                <?php $outOfStock ? print("Out of Stock")  : print("In Stock: ".$quantity) ?>
               </p>
             </div>
           </div>

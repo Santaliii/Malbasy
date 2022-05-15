@@ -64,7 +64,7 @@ function executeQuery($query){
 
 function returnHome($action){
   if($action == 'delete' || $action == 'Edit'){
-    header("Location: Edit.php?edit=success");
+    header("Location: Edit.php?edit=$action");
   }
   else if($action == 'Insert'){
     header("Location: Add.php?add=success");
