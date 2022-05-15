@@ -74,7 +74,12 @@ disconnectFromDatabase($database);
       <?php  
   
   // Loop over products using $row, which is an array that contains columns as indices.
-  while($row = $result -> fetch_assoc()) {  ?>
+  while($row = $result -> fetch_assoc()) {  
+    $quantity = $row['quantity']; 
+    $outOfStock = false;
+    if($quantity <= 0)
+      $outOfStock = true; ?>
+
       <div class="item-container">
         <a class="product-link"
           href="product.php?category=<?php print($row['type']); ?>&id=<?php print($row['id']); ?>">
@@ -85,7 +90,9 @@ disconnectFromDatabase($database);
               <p><b><?php print($row["description"]); ?></b></p>
               <p class="type"><?php print($row["type"]); ?></p>
               <p><?php print("SAR ".$row["price"]); ?></p>
-              <p><?php print("In Stock: ".$row["quantity"]); ?></p>
+              <p class="<?php $outOfStock ? print('stock-dialogue') : '' ?>">
+                <?php $row["quantity"] > 0 ? print("In Stock: ".$row["quantity"]) : print("Out of Stock") ?>
+              </p>
             </div>
           </div>
         </a>

@@ -12,7 +12,6 @@ html {
 
 body {
     font-family: 'Gabriela', serif;
-    height: 100vh;
 }
 
 hr {
@@ -30,6 +29,8 @@ h6 {
     position: relative;
     width: 70vw;
     margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
     top: 5%;
 }
 
@@ -138,6 +139,10 @@ h6 {
     width: 70%;
 }
 
+.products-container hr:last-of-type {
+    margin-bottom: 100px;
+}
+
 .product {
     font-size: 1.2em;
     display: flex;
@@ -205,6 +210,7 @@ h6 {
 
 .vertical-rule {
     width: 0;
+    margin-bottom: 100px;
 }
 
 .cost-container {

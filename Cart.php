@@ -81,6 +81,7 @@ isset($_GET['category']) ? header("Location: Cart.php") : ''
     </div>
     <?php }else{ ?>
     <div class="cart-container">
+
       <div class="products-container">
         <?php
           for($i = 0; $i < count($_SESSION['cart']); $i++) {
@@ -162,7 +163,8 @@ isset($_GET['category']) ? header("Location: Cart.php") : ''
         </form>
       </div>
     </div>
-    <?php } ?>
+  </div>
+  <?php } ?>
 
   </div>
 

@@ -96,6 +96,11 @@
     height: 120px;
 }
 
+.stock-dialogue {
+    color: red;
+    font-weight: bold;
+}
+
 .button {
     text-align: center;
     line-height: 40px;
