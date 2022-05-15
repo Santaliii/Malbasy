@@ -37,26 +37,27 @@ $database = connectToDatabase();
 
   <div class="purchases-container">
     <?php 
-      for($i = 1; $i <= count($_COOKIE) - 2; $i++) { 
-        $order = json_decode($_COOKIE['Order_'.$i]); 
-        $orderTotal = $order[count($order) - 1];
-        $orderDate = $order[count($order) - 2];
+     $query = "SELECT * FROM `order`";
+     $result = queryDatabase($database, $query);
+     while($row = $result->fetch_assoc()){
+       $orderID = $row['id'];
+       $orderTotal = $row['order_total'];
+       $dateOrdered = $row['date_ordered'];
     ?>
     <div class="order">
       <div class="order-header">
-        <?php print("Order #".$i." - ".$orderDate); ?>
+        <?php print("Order #".$orderID." - ".$dateOrdered); ?>
       </div>
       <div class="order-container">
-        <?php  
-        for($j = 0; $j < count($order) - 2; $j++){ 
-          $query = "SELECT * FROM ".$order[$j][0]." WHERE id = ".$order[$j][1];
-          $quantity = $order[$j][2];
-          $result = queryDatabase($database, $query);
-          $row = $result -> fetch_assoc();
-          $imageSource = $row['image_src'];
-          $productTitle = $row['description'];
-          $productCategory = $row['type'];
-          $productPrice = $row['price']; 
+        <?php 
+          $query = "SELECT * FROM `order_products` WHERE order_id = $orderID";
+          $innerResult = queryDatabase($database, $query); 
+        while($innerRow = $innerResult->fetch_assoc()){ 
+          $imageSource = $innerRow['image_src'];
+          $productTitle = $innerRow['description'];
+          $productCategory = $innerRow['type'];
+          $productPrice = $innerRow['price']; 
+          $quantityOrdered = $innerRow['quantity'];
       ?>
         <div class="order-content">
           <div class="image">
@@ -70,11 +71,11 @@ $database = connectToDatabase();
           </div>
           <div class="product-quantity">
             <p><b>Quantity</b></p>
-            <p><?php print($quantity); ?></p>
+            <p><?php print($quantityOrdered); ?></p>
           </div>
           <div class="product-subtotal">
             <p>Item Subtotal</p>
-            <p>SAR <?php print($productPrice * $quantity); ?></p>
+            <p>SAR <?php print($productPrice * $quantityOrdered); ?></p>
           </div>
         </div>
         <hr>

@@ -50,7 +50,8 @@ function createOrder() {
     $row = queryDatabase($database, "SELECT * FROM $type WHERE id = $id")->fetch_assoc();
     $description = $row['description'];
     $price = $row['price'];
-    $query = "INSERT INTO `order_products` (order_id, type, description, price, quantity) VALUES ('$orderID', '$type', '$description', '$price', '$quantity')";
+    $imageSource = $row['image_src'];
+    $query = "INSERT INTO `order_products` (order_id, type, description, price, quantity, image_src) VALUES ('$orderID', '$type', '$description', '$price', '$quantity', '$imageSource')";
     queryDatabase($database, $query);
   }
   disconnectFromDatabase($database);
