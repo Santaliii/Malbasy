@@ -65,6 +65,30 @@ hr {
     max-width: 50%;
 }
 
+.price-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-sort {
+    font-size: 1.4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 5px;
+}
+
+.sort {
+    font-size: 1.1em;
+}
+
 .products-container {
     display: inline-grid;
     grid-template-columns: repeat(auto-fill, 250px);

@@ -7,9 +7,29 @@ require('./helpers/dbhelper.php');
 
 
 if(isset($_GET['category']) &&
- ($_GET['category'] == 'UPPERWEAR' || $_GET['category'] == 'BOTTOMS' || $_GET['category'] == 'SHOES' || $_GET['category'] == 'ACCESSORIES'))
-  $query = "SELECT * FROM ".$_GET['category'];
-else{
+ ($_GET['category'] == 'UPPERWEAR' || $_GET['category'] == 'BOTTOMS' || $_GET['category'] == 'SHOES' || $_GET['category'] == 'ACCESSORIES')){
+  if(isset($_POST['sort']) && ($_POST['sort'] == 'Highest' || $_POST['sort'] == 'Lowest')){
+    $sort = 'ASC';
+  if($_POST['sort'] == 'Highest')
+    $sort = 'DESC';
+    $query = "SELECT * FROM ".$_GET['category']." ORDER BY price $sort";
+  }
+  else{
+    $query = "SELECT * FROM ".$_GET['category'];
+  }
+
+ }
+else if(isset($_POST['sort']) && ($_POST['sort'] == 'Highest' || $_POST['sort'] == 'Lowest')){
+  $sort = 'ASC';
+  if($_POST['sort'] == 'Highest')
+    $sort = 'DESC';
+  $query = "SELECT * FROM upperwear
+    UNION SELECT * FROM bottoms
+    UNION SELECT * FROM shoes 
+    UNION SELECT * FROM accessories
+    ORDER BY price $sort";
+}
+else {
   $query = "SELECT * FROM upperwear
     UNION SELECT * FROM bottoms
     UNION SELECT * FROM shoes 
@@ -40,8 +60,9 @@ disconnectFromDatabase($database);
 
   <div class="products-top">
     <img class="homepage-logo" src="images/Malbasy/Logo.png" alt="Malbasy Logo">
-    <form action="Homepage.php">
+    <form id="filter-form" action="Homepage.php">
       <div class="category-buttons">
+        <input class="category" type="submit" value="ALL">
         <input class="category" type="submit" name="category" value="UPPERWEAR">
         <input class="category" type="submit" name="category" value="BOTTOMS">
         <input class="category" type="submit" name="category" value="SHOES">
@@ -53,6 +74,19 @@ disconnectFromDatabase($database);
   </div>
 
   <div class="products-center">
+
+    <div class="price-sort">
+      <div class="price-heading">
+        <img src="./images/Malbasy/Sort.png" alt="Sort Icon">
+        <p>Price</p>
+      </div>
+
+      <form class="sort-buttons" method="post" action="">
+        <input class="category sort" type="submit" name="sort" value="Highest">
+        <input class="category sort" type="submit" name="sort" value="Lowest">
+      </form>
+
+    </div>
 
     <div class="products-container">
       <?php  

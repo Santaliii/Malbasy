@@ -21,18 +21,31 @@ include 'reusables/Header.php';
 
 <body>
 
-<h1 class="credit-title">Credits</h1>
-<hr>
+  <h1 class="credit-title">Credits</h1>
+  <hr>
 
 
-<div class="attribute-container">
-    <p class="credit"><a href="https://www.flaticon.com/free-icons/shopping-bag" title="shopping bag icons">Shopping bag icons created by kmg design - Flaticon</a></p>
-    <p class="credit"><a href="https://www.flaticon.com/free-icons/address" title="address icons">Address icons created by mattbadal - Flaticon</a></p>
-    <p class="credit"><a href="https://www.flaticon.com/free-icons/clock" title="clock icons">Clock icons created by Those Icons - Flaticon</a></p>
-    <p class="credit"><a href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by Those Icons - Flaticon</a></p>
-    <p class="credit"><a href="https://www.flaticon.com/free-icons/trash-can" title="trash can icons">Trash can icons created by Freepik - Flaticon</a></p>
-    <p class="credit"><a href="https://www.flaticon.com/free-icons/delete" title="delete icons">Delete icons created by Pixel perfect - Flaticon</a></p>
-    <p class="credit"><a href="https://www.flaticon.com/free-icons/shopping-bag" title="shopping bag icons">Shopping bag icons created by Freepik - Flaticon</a></p>
-</div>
+  <div class="attribute-container">
+    <p class="credit"><a href="https://www.flaticon.com/free-icons/shopping-bag" title="shopping bag icons">Shopping bag
+        icons created by kmg design - Flaticon</a></p>
+    <p class="credit"><a href="https://www.flaticon.com/free-icons/address" title="address icons">Address icons created
+        by mattbadal - Flaticon</a></p>
+    <p class="credit"><a href="https://www.flaticon.com/free-icons/clock" title="clock icons">Clock icons created by
+        Those Icons - Flaticon</a></p>
+    <p class="credit"><a href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by
+        Those Icons - Flaticon</a></p>
+    <p class="credit"><a href="https://www.flaticon.com/free-icons/trash-can" title="trash can icons">Trash can icons
+        created by Freepik - Flaticon</a></p>
+    <p class="credit"><a href="https://www.flaticon.com/free-icons/delete" title="delete icons">Delete icons created by
+        Pixel perfect - Flaticon</a></p>
+    <p class="credit"><a href="https://www.flaticon.com/free-icons/shopping-bag" title="shopping bag icons">Shopping bag
+        icons created by Freepik - Flaticon</a></p>
+    <p class="credit"><a href="https://www.flaticon.com/free-icons/sort" title="sort icons">Sort icons created by
+        Smashicons - Flaticon</a></p>
+  </div>
+
+  <?php include './reusables/Footer.php' ?>
+
 </body>
+
 </html>
