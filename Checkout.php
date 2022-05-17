@@ -10,16 +10,9 @@ $notAllowed = false;
 if(isset($_SESSION['cart']) && !empty($_SESSION['cart']) && isset($_POST['submit'])){
   date_default_timezone_set('Asia/Riyadh');
   createOrder();
-  // Number of the new order
-  $numOfOrders = $_COOKIE['numOfOrders'] + 1;
-  // Updating total num of orders for the user
-  setcookie("numOfOrders", $numOfOrders, time() + (86400 * 60));
-  array_push($_SESSION['cart'], date('d/m/Y'), calculateTotal());
-  // Set the order cookie 
-  setcookie("Order_".$numOfOrders, json_encode($_SESSION['cart']), time() + (86400 * 60));
   $database = connectToDatabase();
   // Edit quantity
-  for($i = 0; $i < count($_SESSION['cart']) - 2; $i++) {
+  for($i = 0; $i < count($_SESSION['cart']); $i++) {
     $category = $_SESSION['cart'][$i][0];
     $id = $_SESSION['cart'][$i][1];
     $quantity = $_SESSION['cart'][$i][2];

@@ -5,14 +5,17 @@ session_start();
 require('./helpers/helper.php');
 require('./helpers/dbhelper.php');
 
-
-$items = array();
+$categories = array("UPPERWEAR", "BOTTOMS", "ACCESSORIES", "SHOES");
 $success = false;
 $error = false;
 
 if((!isset($_GET['category']) || empty($_GET['category'])) || (!isset($_GET['id']) || empty($_GET['id']))){
   header('Location: 404.php');
 }
+else if(!in_array(strtoupper($_GET['category']), $categories)){
+  header('Location: 404.php');
+}
+
 
 // If session cart is empty then initialize it as an empty manipulable array
 if(empty($_SESSION['cart'])){
@@ -111,7 +114,7 @@ $query = "SELECT * FROM ".$_GET['category']." WHERE id = ".$_GET['id'];
           <p>Quantity</p>
           <input name="quantity" value="<?php $quantity > 0 ? print('1') : print('0') ?>" min="1"
             max="<?php print($quantity) ?>" class="quantity-box" type="number" onkeydown="return false">
-          <p>Only <b style="color: red;"><?php print($quantity) ?></b> left in stock.</p>
+          <p><b style="color: red;"><?php print($quantity) ?></b> pieces left in stock.</p>
         </form>
         <ul>
           <li>High Quality Materials</li>

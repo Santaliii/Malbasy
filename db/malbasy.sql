@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2022 at 07:41 PM
+-- Generation Time: May 17, 2022 at 03:32 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.2.34
 
@@ -41,11 +41,11 @@ CREATE TABLE `accessories` (
 --
 
 INSERT INTO `accessories` (`id`, `type`, `description`, `price`, `quantity`, `image_src`) VALUES
-(2, 'Accessories', 'Watch', 200.99, 3, 'Accessories/Watch.jpg'),
-(3, 'Accessories', 'Hat', 20.99, 6, 'Accessories/Hat.jpg'),
-(4, 'Accessories', 'Sunglasses', 139.99, 6, 'Accessories/Sunglasses.jpg'),
+(2, 'Accessories', 'Watch', 200.99, 5, 'Accessories/Watch.jpg'),
+(3, 'Accessories', 'Hat', 20.99, 4, 'Accessories/Hat.jpg'),
+(4, 'Accessories', 'Sunglasses', 139.99, 5, 'Accessories/Sunglasses.jpg'),
 (5, 'Accessories', 'Wallet', 30.99, 5, 'Accessories/Wallet.jpg'),
-(6, 'Accessories', 'Belt', 10.99, 6, 'Accessories/Belt.jpg');
+(6, 'Accessories', 'Belt', 10.99, 5, 'Accessories/Belt.jpg');
 
 -- --------------------------------------------------------
 
@@ -91,11 +91,11 @@ CREATE TABLE `bottoms` (
 --
 
 INSERT INTO `bottoms` (`id`, `type`, `description`, `price`, `quantity`, `image_src`) VALUES
-(1, 'Bottoms', 'Jeans', 140.99, 1, 'Bottoms/Jeans.jpg'),
-(3, 'Bottoms', 'Shorts', 60.99, 2, 'Bottoms/Shorts.jpg'),
-(4, 'Bottoms', 'Sweatpants', 71.99, 7, 'Bottoms/Sweatpants.jpg'),
-(5, 'Bottoms', 'Swimming Shorts', 76.99, 1, 'Bottoms/Swimming Shorts.jpg'),
-(6, 'Bottoms', 'Chinos', 43.99, 9, 'Bottoms/Chinos.jpg');
+(1, 'Bottoms', 'Jeans', 140.99, 5, 'Bottoms/Jeans.jpg'),
+(3, 'Bottoms', 'Shorts', 60.99, 4, 'Bottoms/Shorts.jpg'),
+(4, 'Bottoms', 'Sweatpants', 71.99, 6, 'Bottoms/Sweatpants.jpg'),
+(5, 'Bottoms', 'Swimming Shorts', 76.99, 11, 'Bottoms/Swimming Shorts.jpg'),
+(6, 'Bottoms', 'Chinos', 43.99, 6, 'Bottoms/Chinos.jpg');
 
 -- --------------------------------------------------------
 
@@ -109,13 +109,6 @@ CREATE TABLE `order` (
   `date_ordered` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `order`
---
-
-INSERT INTO `order` (`id`, `order_total`, `date_ordered`) VALUES
-(7, 275.95, '09/05/2022');
-
 -- --------------------------------------------------------
 
 --
@@ -128,17 +121,9 @@ CREATE TABLE `order_products` (
   `type` varchar(45) NOT NULL,
   `description` varchar(45) NOT NULL,
   `price` double NOT NULL,
-  `quantity` int(11) NOT NULL
+  `quantity` int(11) NOT NULL,
+  `image_src` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `order_products`
---
-
-INSERT INTO `order_products` (`id`, `order_id`, `type`, `description`, `price`, `quantity`) VALUES
-(12, 7, 'Upperwear', 'Plain Hoodie', 81.99, 1),
-(13, 7, 'Accessories', 'Belt', 10.99, 1),
-(14, 7, 'Bottoms', 'Shorts', 60.99, 3);
 
 -- --------------------------------------------------------
 
@@ -160,8 +145,8 @@ CREATE TABLE `shoes` (
 --
 
 INSERT INTO `shoes` (`id`, `type`, `description`, `price`, `quantity`, `image_src`) VALUES
-(2, 'Shoes', 'Sneakers', 140.99, 6, 'Shoes/Sneakers.jpg'),
-(3, 'Shoes', 'Football Boots', 180.99, 4, 'Shoes/Football Boots.jpg'),
+(2, 'Shoes', 'Sneakers', 140.99, 5, 'Shoes/Sneakers.jpg'),
+(3, 'Shoes', 'Football Boots', 180.99, 1, 'Shoes/Football Boots.jpg'),
 (4, 'Shoes', 'Boots', 80.99, 3, 'Shoes/Boots.jpg');
 
 -- --------------------------------------------------------
@@ -184,12 +169,12 @@ CREATE TABLE `upperwear` (
 --
 
 INSERT INTO `upperwear` (`id`, `type`, `description`, `price`, `quantity`, `image_src`) VALUES
-(2, 'Upperwear', 'Space Hoodie', 20.99, 6, 'Upperwear/Space Print Hoodie.jpg'),
+(2, 'Upperwear', 'Space Hoodie', 20.99, 3, 'Upperwear/Space Print Hoodie.jpg'),
 (3, 'Upperwear', 'Striped T-Shirt', 30.99, 6, 'Upperwear/Striped T-Shirt.jpg'),
-(4, 'Upperwear', 'Plain T-Shirt', 20.99, 2, 'Upperwear/T-Shirt.jpg'),
-(5, 'Upperwear', 'Plain Tank-Top', 35.99, 10, 'Upperwear/Tank Top.jpg'),
+(4, 'Upperwear', 'Plain T-Shirt', 20.99, 3, 'Upperwear/T-Shirt.jpg'),
+(5, 'Upperwear', 'Plain Tank-Top', 35.99, 9, 'Upperwear/Tank Top.jpg'),
 (6, 'Upperwear', 'V-Neck T-Shirt', 15.99, 4, 'Upperwear/V-Neck T-Shirt.jpg'),
-(8, 'Upperwear', 'Plain Hoodie', 81.99, 3, 'Upperwear/Hoodie.jpg');
+(8, 'Upperwear', 'Plain Hoodie', 81.99, 11, 'Upperwear/Hoodie.jpg');
 
 --
 -- Indexes for dumped tables
@@ -264,13 +249,13 @@ ALTER TABLE `bottoms`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `order_products`
 --
 ALTER TABLE `order_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `shoes`
@@ -282,7 +267,7 @@ ALTER TABLE `shoes`
 -- AUTO_INCREMENT for table `upperwear`
 --
 ALTER TABLE `upperwear`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- Constraints for dumped tables

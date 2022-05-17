@@ -6,6 +6,11 @@ require('./helpers/helper.php');
 require('./helpers/dbhelper.php');
 
 $database = connectToDatabase();
+$hasOrdered = false;
+$query = "SELECT COUNT(*) as numOfOrders FROM `order`";
+$result = queryDatabase($database, $query);
+if($result->fetch_assoc()['numOfOrders'] > 0)
+  $hasOrdered = true;
 ?>
 
 <html lang="en">
@@ -15,7 +20,9 @@ $database = connectToDatabase();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="styles/purchases.css">
-  <title>Past Purchases</title>
+  <link rel="icon" type="image/icon type" href="./images/Malbasy/Small Logo.jpg">
+
+  <title>Malbasy - Past Purchases</title>
 </head>
 
 <body>
@@ -26,14 +33,13 @@ $database = connectToDatabase();
     <h1>Past Purchases</h1>
   </div>
 
-  <?php if(isset($_COOKIE['numOfOrders'])) {
-          if($_COOKIE['numOfOrders'] == 0){ ?>
+  <?php if(!$hasOrdered) { ?>
 
   <div class="no-orders">
     <p>You have not ordered any items yet.</p>
   </div>
 
-  <?php }} ?>
+  <?php } ?>
 
   <div class="purchases-container">
     <?php 

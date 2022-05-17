@@ -85,7 +85,7 @@ disconnectFromDatabase($database);
         <input class="category sort" type="submit" name="sort" value="Highest">
         <input class="category sort" type="submit" name="sort" value="Lowest">
       </form>
-
+      <hr>
     </div>
 
     <div class="products-container">

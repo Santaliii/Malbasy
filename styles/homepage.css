@@ -21,7 +21,6 @@ hr {
 
 .products-top {
     max-width: 50vw;
-    height: 30%;
     margin: auto;
 }
 
@@ -73,10 +72,18 @@ hr {
 
 .price-sort {
     font-size: 1.4em;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
     gap: 10px;
+}
+
+.price-sort hr {
+    margin: 0;
+    width: 100%;
 }
 
 .sort-buttons {

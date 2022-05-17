@@ -7,7 +7,9 @@
 }
 
 body {
+    margin: 0;
     font-family: 'Gabriela', serif;
+    overflow: scroll;
 }
 
 .header-rule {

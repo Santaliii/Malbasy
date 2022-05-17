@@ -20,7 +20,7 @@ if(mysqli_num_rows($result) == 0){
 }
 else {
   // $isLoginSuccessful = true;
-  header('Location: Homepage.php');
+  header('Location: Edit.php');
   $_SESSION['admin'] = $username;
 }
 

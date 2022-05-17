@@ -32,7 +32,7 @@ disconnectFromDatabase($database);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/icon type" href="./images/Malbasy/Small Logo.jpg">
   <link rel="stylesheet" type="text/css" href="styles/Edit.css">
-  <title>Malbasy - Results</title>
+  <title>Malbasy - Admin</title>
 </head>
 
 <body>

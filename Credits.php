@@ -42,6 +42,8 @@ include 'reusables/Header.php';
         icons created by Freepik - Flaticon</a></p>
     <p class="credit"><a href="https://www.flaticon.com/free-icons/sort" title="sort icons">Sort icons created by
         Smashicons - Flaticon</a></p>
+    <p class="credit"><a href="https://www.flaticon.com/free-icons/warning" title="warning icons">Warning icons created
+        by Freepik - Flaticon</a></p>
   </div>
 
   <?php include './reusables/Footer.php' ?>
